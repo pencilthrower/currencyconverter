@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, TouchableHighlight, StyleSheet, TextInput, ActivityIndicator } from 'react-native';
+import { AppRegistry, Text, View, TouchableHighlight, StyleSheet, TextInput, ActivityIndicator, ImageBackground } from 'react-native';
 import { Constants } from 'expo';
 
 
@@ -104,6 +104,12 @@ componentDidMount (){
         } else{
 
         return (
+
+            <View style={styles.container}>
+                <ImageBackground
+                    style={styles.imgBack}
+                    source={{ uri: 'https://s3.amazonaws.com/pixtruder/original_images/9fbb73a7cba9b7b75c3d05484f6b6d087470641d' }}
+                    >
             
             <View style={styles.container}>
             
@@ -216,7 +222,7 @@ componentDidMount (){
                         USD to Japan Yen
                     </Text>
                 </TouchableHighlight>
-                
+
                 </View>
                 
                 
@@ -225,9 +231,12 @@ componentDidMount (){
                     Converted currency value:  {this.state.newBal.toFixed(2)}
                 </Text>
                 
-                
-                
-            </View>
+         </View>
+                </ImageBackground>
+            
+                            </View>            
+           
+            
             
       );
    }
@@ -240,17 +249,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#800000',
-        color: "white",
+        color: 'white',
         
     },
     button: {
         marginBottom: 0,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'Red',
+        backgroundColor: 'red',
         height: 40,
         width: 100,
-        borderStyle: "groove",
+        borderStyle:'solid',
+        borderRadius: 5,
         borderColor: 'black',
         borderWidth: 1,
         marginHorizontal: 5,
@@ -267,6 +277,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#34495e',
-    }
+    },
+
+    imgBack: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        height: '100%',
+        flex: 1,
+    },
     
 });
